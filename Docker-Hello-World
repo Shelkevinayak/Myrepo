@@ -1,3 +1,20 @@
-ls
-pwd
-docker run hello-world
+pipeline {
+   agent any
+   
+   environment {
+       DockerProvisioning='1.0'
+   }
+
+   stages {
+      stage('stage-1') {
+         steps {
+            echo "This is build number $BUILD_NUMBER of demo $DockerProvisioning"
+            sh '''
+               echo "Provisioning docker now"
+               chmod +x DockerProvision.sh
+               ./DockerProvision.sh
+            '''
+         }
+      }
+   }
+}
