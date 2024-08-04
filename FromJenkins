@@ -9,8 +9,8 @@ pipeline {
       stage('stage-1') {
          steps {
             echo "This is build number $BUILD_NUMBER of demo $DockerProvisioningwithvolume"
+            writeFile file: 'Log.txt', text: 'Provisioning docker with volume now'               
             sh '''
-               writeFile file: 'Log.txt', text: 'Provisioning docker with volume now'               
                 chmod +x Docvol.sh
                ./Docvol.sh
             '''
