@@ -11,8 +11,10 @@ pipeline {
             echo "This is build number $BUILD_NUMBER of demo $DockerProvisioning"
             sh '''
                echo "Provisioning docker now"
-               chmod +x DockerProvision.sh
-               ./DockerProvision.sh
+//               chmod +x DockerProvision.sh
+//               ./DockerProvision.sh
+                chmod +x Docvol.sh
+               ./Docvol.sh
             '''
          }
       }
