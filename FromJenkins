@@ -8,7 +8,7 @@ pipeline {
    stages {
       stage('stage-1') {
          steps {
-            echo "This is build number $BUILD_NUMBER of demo $DockerProvisioningwithvolume"
+            echo "This is build number $BUILD_NUMBER of demo $DockerProvisioningwithvolume" 
             writeFile file: 'Log.txt', text: 'Provisioning docker with volume now'               
             sh '''
                 chmod +x Docvol.sh
@@ -19,7 +19,7 @@ pipeline {
    }
 post {
       success {
-         archiveArtifacts 'log.txt'
+         archiveArtifacts 'Log.txt'
       }
    }
 
