@@ -20,6 +20,12 @@ pipeline {
 post {
       success {
          archiveArtifacts 'Log.txt'
+            sh '''
+                chmod +x Copytovol.sh
+               ./Copytovol.sh
+            '''
+
+
       }
    }
 
